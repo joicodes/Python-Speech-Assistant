@@ -34,7 +34,7 @@ def main():
     # Gets answer to user's question
     answer = respond(voice_data)
 
-    # Delays for 0.3 sec and prints answer.
+    # Delays for 0.8 secs and prints answer.
     sleep(0.8)
     print_green(answer)
 
