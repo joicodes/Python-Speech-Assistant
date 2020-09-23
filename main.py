@@ -18,7 +18,7 @@ device_sample_rate = int(pa.get_default_input_device_info()['defaultSampleRate']
 def main():
 
   print("\nHi, I am JoiBot! 👋")
-  print("You're virtual assistant.")
+  print("Your virtual assistant.")
 
   print_cyan("Go ahead. Ask me a question...\n")
   
