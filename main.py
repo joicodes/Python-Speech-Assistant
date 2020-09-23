@@ -1,7 +1,7 @@
-from print_color import *
-from print_speed import *
+from print_color import print_cyan, print_green
+from print_speed import print_slow
 import pyaudio
-from record import *
+from record import record_user_audio
 from respond import respond
 from time import sleep
 
