@@ -1,13 +1,9 @@
-import pyaudio
-
 from print_color import *
 from print_speed import *
+import pyaudio
 from record import *
-
+from respond import respond
 from time import sleep
-from datetime import datetime
-import webbrowser
-
 
 
 # Initialize a PyAudio instance
@@ -17,31 +13,6 @@ pa = pyaudio.PyAudio()
 device_index       = pa.get_default_input_device_info()['index']
 device_name        = pa.get_default_input_device_info()['name']
 device_sample_rate = int(pa.get_default_input_device_info()['defaultSampleRate'])
-
-
-# Global Constants
-today = datetime.now()
-
-
-
-
-def respond(voice_data):
-  if 'your name' in voice_data:
-    return 'My name is JoiBot 🤖'
-
-  elif 'time' in voice_data:
-    now = datetime.now()
-    return now.strftime("%I:%M %p")
-
-  elif "date" in voice_data:
-    return today.strftime("%A, %B %-d, %Y")
-
-  elif "day of the week" in voice_data:
-    return today.strftime('%A')
-
-  else:
-    return "Sorry. I can't answer that question."
-
 
 
 def main():
