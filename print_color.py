@@ -6,37 +6,38 @@ init(autoreset=True)
 # Prints colored text to terminal in the following colors:
 
 # Red 
-def print_red(str):
-  print(Fore.RED + str)
+def print_red(txt):
+  print(Fore.RED + txt)
 
 # Green
-def print_green(str):
-  print(Fore.GREEN + str)
+def print_green(txt):
+  print(Fore.GREEN + txt)
 
 # Yellow
-def print_yellow(str):
-  print(Fore.YELLOW + str)
+def print_yellow(txt):
+  print(Fore.YELLOW + txt)
 
 # Blue
-def print_blue(str):
-  print(Fore.BLUE + str)
+def print_blue(txt):
+  print(Fore.BLUE + txt)
 
 # Magenta
-def print_magenta(str):
-  print(Fore.MAGENTA + str)
+def print_magenta(txt):
+  print(Fore.MAGENTA + txt)
 
 # Cyan
-def print_cyan(str):
-  print(Fore.CYAN + str)
+def print_cyan(txt):
+  print(Fore.CYAN + txt)
 
 # Black
-def print_black(str):
-  print(Fore.BLACK + str)
+def print_black(txt):
+  print(Fore.BLACK + txt)
 
 # White
-def print_white(str):
-  print(Fore.WHITE + str)   
+def print_white(txt):
+  print(Fore.WHITE + txt)   
 
 # Default
-def print_default(str):
-  print(Fore.RESET + str)
+def print_default(txt):
+  print(Fore.RESET + txt)
+  
