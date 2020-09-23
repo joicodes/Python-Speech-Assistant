@@ -1,4 +1,4 @@
-from colorama import init, Fore
+from colorama import init, Fore, Style
 
 # Initialize Colorama with Auto-reset on
 init(autoreset=True)
@@ -41,3 +41,6 @@ def print_white(txt):
 def print_default(txt):
   print(Fore.RESET + txt)
   
+# Dimmed Default
+def print_dim(txt):
+  print(Style.DIM + txt)
