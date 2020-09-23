@@ -1,13 +1,13 @@
 from print_color import print_cyan, print_green
 from print_speed import print_slow
-import pyaudio
+from pyaudio import PyAudio
 from record import record_user_audio
 from respond import respond
+from speak import *
 from time import sleep
 
-
 # Initialize a PyAudio instance
-pa = pyaudio.PyAudio()
+pa = PyAudio()
 
 # Gets info on default input device
 device_index       = pa.get_default_input_device_info()['index']
