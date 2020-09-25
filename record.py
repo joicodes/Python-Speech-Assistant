@@ -5,13 +5,11 @@ from print_color import print_cyan, print_red
 recognizer = sr.Recognizer()
 
 def record_user_audio(device_index, sample_rate):
-    
   with sr.Microphone(device_index=device_index, sample_rate=sample_rate) as source:
 
     attempts = 0
-
+    
     while attempts <= 2: 
-
       voice_data = None
 
       try:
@@ -31,7 +29,8 @@ def record_user_audio(device_index, sample_rate):
 
         else:
           print("I still can't hear you. 😓")
-          print_red("Try again later.\n") 
+          print_red("Try again later.\n")
+          return None 
 
       except sr.RequestError:
         print("😓 Well, this is awkward. My speech services is not working.")
