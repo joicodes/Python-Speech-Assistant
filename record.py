@@ -35,6 +35,6 @@ def record_user_audio(device_index, sample_rate):
       except sr.RequestError:
         print("😓 Well, this is awkward. My speech services is not working.")
         print_red("Try again later.")
-        break
+        return None
 
       return voice_data
