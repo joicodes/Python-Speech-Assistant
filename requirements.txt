@@ -1,5 +1,7 @@
-PyAudio==0.2.11
-colorama==0.4.3
 SpeechRecognition==3.8.1
+PyAudio==0.2.11
 playsound==1.2.2
+pyobjc==6.2.2
 gTTS==2.1.1
+colorama==0.4.3
+
