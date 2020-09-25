@@ -2,6 +2,7 @@ from datetime import datetime
 from random import randint, choice
 import webbrowser
 import time
+from urllib.parse import quote
 
 today = datetime.now()
 
@@ -31,19 +32,26 @@ def get_weekday():
 
 # TO DO: Web Search Commands
 
-def search_google():
-  pass
+def search_google(query):
+  encoded_query = quote(query)
+  url = f"https://www.google.com/search?q={encoded_query}"
+  webbrowser.get().open(url)
+  return "This is what I found on Google."
 
-def search_google_img():
-  pass
-def search_youtube():
-  pass
+def search_google_img(query):
+  url = f"https://www.google.com/search?q={quote(query)}&tbm=isch"
+  webbrowser.get().open(url)
+  return "Here are some images I found on the web."
 
-def search_wikipedia():
-  pass
+def search_youtube(query):
+  url = f"https://www.youtube.com/results?search_query={quote(query)}"
+  webbrowser.get().open(url)
+  return "Here are videos I found on YouTube."
 
-def search_google_maps():
-  pass
+def search_google_maps(query):
+  url = f"http://maps.google.com/?q={quote(query)}"
+  webbrowser.get().open(url)
+  return "Here is what I found on Google Maps."
 
 # For Fun  
 def get_coin_toss():
@@ -58,7 +66,6 @@ def get_card():
   suite = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
   rank = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King']
   return f"{choice(rank)} of {choice(suite)}."
-
 
 
 # Returns a response based on voice data
@@ -89,16 +96,18 @@ def respond(voice_data):
 
   elif "search" in voice_data:
     if "video" in voice_data:
-      return search_youtube()
+      query = voice_data.split("of",1)[1]
+      return search_youtube(query)
     elif "photo" in voice_data:
-      return search_google_img()
-    elif "wikipedia" in voice_data:
-      return search_wikipedia()
+      query = voice_data.split("of",1)[1]
+      return search_google_img(query)
     else:
-      return search_google()
+      query = voice_data.split("for",1)[1]
+      return search_google(query)
 
   elif "where is" in voice_data:
-    return search_google_maps()
+    query = voice_data.split("where is",1)[1]
+    return search_google_maps(query)
 
   elif "flip a coin" in voice_data:
     return get_coin_toss()
@@ -111,3 +120,4 @@ def respond(voice_data):
 
   else:
     return "Sorry. I can't answer that question."
+
