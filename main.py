@@ -15,7 +15,6 @@ device_name        = pa.get_default_input_device_info()['name']
 device_sample_rate = int(pa.get_default_input_device_info()['defaultSampleRate'])
 
 def main():
-
   intro = "\nHi, I am JoiBot!"
   intro2 = "Your virtual assistant."
   intro3 = f"\nSpeak to me using your device called {device_name}."
@@ -38,11 +37,10 @@ def main():
   remove_audio_file(audio_file)
   
   while True:
-
     voice_data = record_user_audio(device_index, device_sample_rate)
 
     if voice_data is None or voice_data == '': 
-      pass
+      break
     else:
 
       # Slowly prints back the question user asks
