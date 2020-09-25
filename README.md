@@ -1,6 +1,7 @@
 # Meet JoiBot 👋🏽
  A  Python3 speech assistant bot using the SpeechRecognition library and Google's Text-to-Speech API.
-
+ 
+ ![Alt Text](https://media.giphy.com/media/HgLiAOrLElo2JG2zsJ/giphy.gif)
 
 ## Voice Commands
 
