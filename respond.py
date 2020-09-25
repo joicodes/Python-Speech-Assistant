@@ -6,7 +6,6 @@ from urllib.parse import quote
 
 today = datetime.now()
 
-
 # Commands for JoiBot 
 
 # About JoiBot
