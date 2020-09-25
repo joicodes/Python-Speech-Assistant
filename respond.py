@@ -1,4 +1,5 @@
 from datetime import datetime
+from random import randint, choice
 import webbrowser
 import time
 
@@ -6,6 +7,7 @@ import time
 today = datetime.now()
 
 # Commands for JoiBot 
+
 def get_time():
   now = datetime.now()
   return now.strftime("%I:%M %p")
@@ -15,6 +17,20 @@ def get_date():
 
 def get_weekday():
   return today.strftime('%A') 
+
+# For Fun
+def get_coin_toss():
+  flip = randint(0, 1)
+  return "Head." if flip else "Tails."
+
+def get_die_roll():
+  roll = str(randint(1, 6))
+  return roll
+
+def get_card():
+  suite = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+  rank = ['Ace', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King']
+  return f"{choice(rank)} of {choice(suite)}."
 
 
 
@@ -34,6 +50,15 @@ def respond(voice_data):
 
   elif "day of the week" in voice_data:
     return get_weekday()
+
+  elif "flip a coin" in voice_data:
+    return get_coin_toss()
+
+  elif "roll the dice" in voice_data:
+    return get_die_roll()
+
+  elif "pick a card" in voice_data:
+    return get_card()
 
   else:
     return "Sorry. I can't answer that question."
