@@ -17,10 +17,14 @@ def get_weekday():
   return today.strftime('%A') 
 
 
+
 # Returns a response based on voice data
 def respond(voice_data):
-  if 'your name' in voice_data:
-    return 'My name is JoiBot 🤖'
+  if 'bye' in voice_data:
+    return 'Nice talking to you! Goodbye.'
+  
+  elif 'your name' in voice_data:
+    return 'My name is JoiBot.'
 
   elif 'time' in voice_data:
     return get_time()
