@@ -3,7 +3,7 @@
  
  ![Alt Text](https://media.giphy.com/media/HgLiAOrLElo2JG2zsJ/giphy.gif)
  
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 ## Voice Commands
 
 Here are the commands that currently exist (see `respond.txt`):
